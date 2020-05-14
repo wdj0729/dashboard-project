@@ -67,6 +67,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
-# 참고 사이트
-https://create-react-app.dev/docs/getting-started/
+# dashboard_project
 
