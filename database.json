@@ -1,0 +1,7 @@
+{
+    "host": "localhost",
+    "user": "dev_1",
+    "password": "abc1234",
+    "port": 3306,
+    "database": "sharehouse" 
+}
