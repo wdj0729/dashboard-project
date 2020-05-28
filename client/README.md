@@ -69,3 +69,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 # 참고 사이트
 - https://nhn.github.io/tui.chart/latest/
+- https://sheldhe93.tistory.com/6(fetch)
