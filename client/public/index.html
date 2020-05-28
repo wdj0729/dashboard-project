@@ -28,16 +28,12 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <!--<div id="root"></div>-->
-    <div id="pie"></div>
-    <div id="pie2"></div>
-    <div id="pie3"></div>
-    <div id="pie4"></div>
-    <div id="donut"></div>
-    <div id="donut2"></div>
+    <div id="root"></div>
     <div id="bar"></div>
-    <div id="line"></div>
     <div id="column"></div>
+    <div id="donut"></div>
+    <div id="line"></div>
+    <div id="Pie"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -48,15 +44,14 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <script src="https://uicdn.toast.com/tui.chart/latest/tui-chart-all.min.js"></script>
-    <script src="Pie.js"></script>
-    <script src="Pie2.js"></script>
-    <script src="Pie3.js"></script>
-    <script src="Pie4.js"></script>
-    <script src="Donut.js"></script>
-    <script src="Donut2.js"></script>
-    <script src="Bar.js"></script>
-    <script src="Line.js"></script>
-    <script src="Column.js"></script>
+    <!-- include application-chart.min.css -->
+    <link rel="stylesheet" type="text/css" href="bower_components/tui-chart/dist/chart.min.css" />
+    <!-- include libraries -->
+    <script src="bower_components/tui-code-snippet/code-snippet.min.js"></script>
+    <script src="bower_components/raphael/raphael.min.js"></script>
+    <!-- include chart.min.js -->
+    <script src="bower_components/tui-chart/dist/chart.min.js"></script>
+    <!-- include map data (only map chart) -->
+    <script src="bower_components/tui-chart/dist/maps/world.js"></script>
   </body>
 </html>
