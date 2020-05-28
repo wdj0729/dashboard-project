@@ -22,6 +22,23 @@ const connection = mysql.createConnection({
 });
 connection.connect();
 
+//서울시 요약(서울시 전체방갯수, 전체침대갯수, 평균보증금, 평균월세)
+app.get('/api/seoul/summary',(req, res)=>{
+    connection.query(
+        `
+        SELECT sum(h.room_cnt) 전체방갯수, sum(r.bed_cnt) 전체침대갯수, avg(b.deposit) 평균보증금, avg(b.monthly_rent) 평균월세
+        FROM sharehouse.houses as h
+        INNER JOIN sharehouse.rooms as r
+        ON h.id = r.house_id
+        INNER JOIN sharehouse.beds as b
+        ON r.id = b.room_id;
+        `,
+        (err, rows, fields) => {
+            res.send(rows);
+        }
+    )
+})
+
 //서울시 매물 유형
 app.get('/api/seoul/house_type_distribution',(req, res)=>{
     connection.query(
@@ -52,7 +69,7 @@ app.get('/api/seoul/bed_cnt_group',(req, res)=>{
 })
 
 //서울시 구간별 월세
-app.get('/api/seoul/bed_cnt_group',(req, res)=>{
+app.get('/api/seoul/monthly_rent_interval',(req, res)=>{
     connection.query(
         `
         SELECT count(if(b.monthly_rent>0 and b.monthly_rent <=20,true,null)) "0~20", 
@@ -70,7 +87,7 @@ app.get('/api/seoul/bed_cnt_group',(req, res)=>{
 })
 
 //서울시 구간별 보증금
-app.get('/api/seoul/bed_cnt_group',(req, res)=>{
+app.get('/api/seoul/deposit_interval',(req, res)=>{
     connection.query(
         `
         SELECT count(if(b.deposit>0 and b.deposit <=300,true,null)) "0~300", 
