@@ -8,11 +8,9 @@ class Columns extends Component {
         super(props);
     }
     componentWillMount() {
-        fetch('http://localhost:5000/seoul')
-            .then(res => res.json())
-            .then(data => console.log(data));
-    }
-    render() {
+        fetch('')
+        .then(res => res.json())
+        .then(data => console.log(data))
         var container = document.getElementById('column');
         var data = {
             categories: ['03/01/2020', '04/01/2020', '05/01/2020', '06/01/2020',],
@@ -72,6 +70,8 @@ class Columns extends Component {
         tui.registerTheme('myTheme', theme);
         options.theme = 'myTheme';
         tui.columnChart(container, data, options);
+    }
+    render() {
         return (
             <div>
                 Column.js를 App.js에 보이도록 이동
