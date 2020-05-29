@@ -4,9 +4,11 @@ import './index.css';
 import App from './App';
 import Bars from './components/Bars'
 import Columns from './components/Columns';
-import Donuts from './components/Donuts';
+import Deposits from './components/Deposit';
 import Lines from './components/Lines';
-import Pies from './components/Pies'
+import HouseTypes from './components/HouseType';
+import BedCnts from './components/BedCnt';
+import Rents from './components/Rent'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
@@ -14,9 +16,11 @@ ReactDOM.render(
     <App />
     <Bars />
     <Columns />
-    <Donuts />
+    <Deposits />
+    <Rents />
     <Lines />
-    <Pies />
+    <HouseTypes />
+    <BedCnts />
   </React.StrictMode>,
  document.getElementById('root'),
 );

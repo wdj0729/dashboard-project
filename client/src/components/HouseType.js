@@ -7,12 +7,12 @@ const API = 'http://localhost:5000/api/seoul/house_type_distribution'
 //변수 초기화
 let villa=0, apt=0, guitar=0, house=0, oneroom=0, office=0, total_num=0;
 
-class Pies extends Component {
+class HouseTypes extends Component {
     /* 컴포넌트 생성시 */
     /* 생명주기순서 : constructor(생성자) -> componentWillMount -> render */
-    constructor(props) {
+    /*constructor(props) {
         super(props);
-    }
+    }*/
     componentDidMount(){
         // 외부 라이브러리 연동: D3, masonry, etc
         // 컴포넌트에서 필요한 데이터 요청: Ajax, GraphQL, etc
@@ -25,47 +25,47 @@ class Pies extends Component {
             //각 인덱스별 객체에 저장
             const villaObj = pies[0], aptObj = pies[1], guitarObj = pies[2];
             const houseObj = pies[3], oneroomObj = pies[4], officeObj = pies[5];
-            console.log(pies)
+            //console.log(pies)
             //객체에서 각 변수에 TOTAL_BED_CNT만 저장
             for (let prop in villaObj){
-                if(prop='TOTAL_BED_CNT'){
+                if(prop==='TOTAL_BED_CNT'){
                     villa = villaObj[prop];
-                    console.log('villa: ' + villa)
+                    //console.log('villa: ' + villa)
                 }
             }
             for (let prop in aptObj){
-                if(prop='TOTAL_BED_CNT'){
+                if(prop==='TOTAL_BED_CNT'){
                     apt = aptObj[prop];
-                    console.log('apt: ' + apt)
+                    //console.log('apt: ' + apt)
                 }
             }
             for (let prop in guitarObj){
-                if(prop='TOTAL_BED_CNT'){
+                if(prop==='TOTAL_BED_CNT'){
                     guitar = guitarObj[prop];
-                    console.log('guitar: ' + guitar)
+                    //console.log('guitar: ' + guitar)
                 }
             }
             for (let prop in houseObj){
-                if(prop='TOTAL_BED_CNT'){
+                if(prop==='TOTAL_BED_CNT'){
                     house = houseObj[prop];
-                    console.log('house: ' + house)
+                    //console.log('house: ' + house)
                 }
             }
             for (let prop in oneroomObj){
-                if(prop='TOTAL_BED_CNT'){
+                if(prop==='TOTAL_BED_CNT'){
                     oneroom = oneroomObj[prop];
-                    console.log('oneroom: ' + oneroom)
+                    //console.log('oneroom: ' + oneroom)
                 }
             }
             for (let prop in officeObj){
-                if(prop='TOTAL_BED_CNT'){
+                if(prop==='TOTAL_BED_CNT'){
                     office = officeObj[prop];
-                    console.log('office: ' + office)
+                    //console.log('office: ' + office)
                 }
             }
             // 전체 유형별 개수
             total_num = villa + apt + guitar + house + oneroom + office;
-            console.log('total_num: ' + total_num)
+            //console.log('total_num: ' + total_num)
             // 각 유형별 점유율
             villa = (villa*100)/total_num;
             villa = villa.toFixed(1);
@@ -80,7 +80,7 @@ class Pies extends Component {
             office = (office*100)/total_num;
             office = office.toFixed(1);
 
-            const container = document.getElementById('pie');
+            const container = document.getElementById('houseType');
             let data = {
                         categories: ['house-type'],
                         series: [
@@ -114,7 +114,7 @@ class Pies extends Component {
                         chart: {
                             width: 700,
                             height: 700,
-                            title: '서울특별시 매물 유형별 분포율',
+                            title: '서울특별시 매물 유형 분포율',
                             format: function(value, chartType, areaType, valuetype, legendName) {
                             if (areaType === 'makingSeriesLabel') { // formatting at series area
                                 value = value + '%';
@@ -126,7 +126,7 @@ class Pies extends Component {
                         series: {
                             showLegend: true,
                             showLabel: true,
-                            labelAlign: 'center'
+                            labelAlign: 'outer'
                         },
                         tooltip: {
                             suffix: '%'
@@ -160,9 +160,9 @@ class Pies extends Component {
     render() {
         return (
             <div>
-                Pies.js를 App.js에 보이도록 이동
+                HouseType.js를 App.js에 보이도록 이동
             </div>
         )
     }
 }
-export default Pies;
+export default HouseTypes;

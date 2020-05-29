@@ -39,7 +39,7 @@ app.get('/api/seoul/summary',(req, res)=>{
     )
 })
 
-//서울시 매물 유형
+//서울시 매물 유형 ok
 app.get('/api/seoul/house_type_distribution',(req, res)=>{
     connection.query(
         `
@@ -54,7 +54,7 @@ app.get('/api/seoul/house_type_distribution',(req, res)=>{
     )
 })
 
-//서울시 인실 점유율
+//서울시 인실 점유율 ok
 app.get('/api/seoul/bed_cnt_group',(req, res)=>{
     connection.query(
         `
@@ -68,7 +68,7 @@ app.get('/api/seoul/bed_cnt_group',(req, res)=>{
     )
 })
 
-//서울시 구간별 월세
+//서울시 구간별 월세 ok
 app.get('/api/seoul/monthly_rent_interval',(req, res)=>{
     connection.query(
         `
@@ -86,7 +86,7 @@ app.get('/api/seoul/monthly_rent_interval',(req, res)=>{
     )
 })
 
-//서울시 구간별 보증금
+//서울시 구간별 보증금 ok
 app.get('/api/seoul/deposit_interval',(req, res)=>{
     connection.query(
         `

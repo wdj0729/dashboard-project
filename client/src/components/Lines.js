@@ -4,10 +4,10 @@ import tui from 'tui-chart';
 class Lines extends Component {
     /* 컴포넌트 생성시 */
     /* 생명주기순서 : constructor(생성자) -> componentWillMount -> render */
-    constructor(props) {
+    /*constructor(props) {
         super(props);
-    }
-    componentWillMount() {
+    }*/
+    componentDidMount() {
         fetch('')
         .then(res => res.json())
         .then(data => console.log(data))
