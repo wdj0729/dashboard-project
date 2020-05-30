@@ -26,12 +26,86 @@ connection.connect();
 app.get('/api/seoul/summary',(req, res)=>{
     connection.query(
         `
-        SELECT sum(h.room_cnt) 전체방갯수, sum(r.bed_cnt) 전체침대갯수, avg(b.deposit) 평균보증금, avg(b.monthly_rent) 평균월세
+        SELECT count(if(b.is_full=true,true,null)) 전체거주예상인원수, sum(r.bed_cnt) 전체매물갯수, avg(b.deposit) 평균보증금, avg(b.monthly_rent) 평균월세
         FROM sharehouse.houses as h
         INNER JOIN sharehouse.rooms as r
         ON h.id = r.house_id
         INNER JOIN sharehouse.beds as b
         ON r.id = b.room_id;
+        `,
+        (err, rows, fields) => {
+            res.send(rows);
+        }
+    )
+})
+
+//자치구별 요약값(성비율 미반영)
+app.get('/api/seoul/summary_by_district',(req, res)=>{
+    connection.query(
+        `
+        SELECT h.district 자치구, count(if(b.is_full=true,true,null)) 거주예상인원수, 
+        count(b.id) 매물수, avg(b.deposit) 평균보증금, avg(b.monthly_rent) 평균월세,
+        count(if(b.is_full=false,true,null))/count(b.id)*100 공실율
+        FROM sharehouse.houses as h
+        INNER JOIN sharehouse.rooms as r
+        ON h.id = r.house_id
+        INNER JOIN sharehouse.beds as b
+        ON r.id = b.room_id
+        GROUP BY h.district;
+        `,
+        (err, rows, fields) => {
+            res.send(rows);
+        }
+    )
+})
+
+//서울시 지역별 거주 예상인원수(현재?)
+app.get('/api/seoul/filled_bedcnt_by_district',(req, res)=>{
+    connection.query(
+        `
+        SELECT h.district 자치구, count(if(b.is_full=true,true,null)) 거주예상인원수
+        FROM sharehouse.houses as h
+        INNER JOIN sharehouse.rooms as r
+        ON h.id = r.house_id
+        INNER JOIN sharehouse.beds as b
+        ON r.id = b.room_id
+        GROUP BY h.district
+        WITH ROLLUP;
+        `,
+        (err, rows, fields) => {
+            res.send(rows);
+        }
+    )
+})
+
+//전체 매물 리스트 테이블(매물링크 미구현)
+app.get('/api/seoul/total_beds_table',(req, res)=>{
+    connection.query(
+        `
+        SELECT h.house_name 이름, h.house_type 매물유형, r.room_name 방이름, h.road_address 도로명주소, b.deposit 보증금, b.monthly_rent 월세, r.bed_cnt 인실, r.gender 성별
+        FROM sharehouse.houses as h
+        INNER JOIN sharehouse.rooms as r
+        ON h.id = r.house_id
+        INNER JOIN sharehouse.beds as b
+        ON r.id = b.room_id
+        order by h.road_address;
+        `,
+        (err, rows, fields) => {
+            res.send(rows);
+        }
+    )
+})
+
+//서울시 지역별 매물수
+app.get('/api/seoul/house_by_district',(req, res)=>{
+    connection.query(
+        `
+        SELECT h.district 구, sum(r.bed_cnt) 매물
+        FROM sharehouse.houses as h
+        INNER JOIN sharehouse.rooms as r
+        ON h.id = r.house_id
+        GROUP BY h.district
+        WITH ROLLUP;
         `,
         (err, rows, fields) => {
             res.send(rows);
