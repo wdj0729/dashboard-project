@@ -62,3 +62,49 @@
 .App-row .seoul-info{
   font-size: 13px;
 }
+
+#people {
+  margin-top:5%;
+  margin-left: 12%;
+}
+
+#districtType {
+  margin-top:5%;
+  margin-left: 12%;
+}
+
+#house {
+  margin-top:5%;
+  margin-left: 12%;
+}
+
+
+#deposit {
+  margin-top:5%;
+  margin-left: 12%;
+}
+
+#rent {
+  margin-top:5%;
+  margin-left: 12%;
+}
+
+#houseType {
+  margin-top:5%;
+  margin-left: 12%;
+}
+
+#bedCnt {
+  margin-top:5%;
+  margin-left: 12%;
+}
+
+#column{
+  margin-top:5%;
+  margin-left: 12%;
+}
+
+#line {
+  margin-top:5%;
+  margin-left: 12%;
+}

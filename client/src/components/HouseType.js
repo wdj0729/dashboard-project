@@ -86,6 +86,9 @@ class HouseTypes extends Component {
                         },
                         legend: {
                             visible: false
+                        },
+                        chartExportMenu: {
+                            visible: false
                         }
                     };
             const theme = {

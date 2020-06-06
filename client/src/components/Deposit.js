@@ -80,6 +80,9 @@ class Deposits extends Component {
                         },
                         legend: {
                             align: 'bottom'
+                        },
+                        chartExportMenu: {
+                            visible: false
                         }
                     };
             const theme = {

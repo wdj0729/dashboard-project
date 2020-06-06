@@ -50,6 +50,9 @@ class Columns extends Component {
             },
             legend: {
                 align: 'bottom'
+            },
+            chartExportMenu: {
+                visible: false
             }
         };
         var theme = {

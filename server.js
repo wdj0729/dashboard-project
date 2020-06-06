@@ -59,7 +59,7 @@ app.get('/api/seoul/summary_by_district',(req, res)=>{
     )
 })
 
-//서울시 지역별 거주 예상인원수(현재?)
+//서울시 지역별 거주 예상인원수(현재?) ok
 app.get('/api/seoul/filled_bedcnt_by_district',(req, res)=>{
     connection.query(
         `
@@ -96,7 +96,7 @@ app.get('/api/seoul/total_beds_table',(req, res)=>{
     )
 })
 
-//서울시 지역별 매물수
+//서울시 지역별 매물수 ok
 app.get('/api/seoul/house_by_district',(req, res)=>{
     connection.query(
         `

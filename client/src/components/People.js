@@ -51,7 +51,7 @@ class Peoples extends Component {
                                     '강동구', '강서구', '도봉구', '양천구', '금천구',],
                         series: [
                             {
-                                name: 'Houses',
+                                name: 'people',
                                 data: [mapo, dongdaemoon, seodaemoon, gangnam, yongsan,
                                     gwanak, seocho, gwangjin, nowon, seongbook,
                                     seongdong, yeongdungpo, jongro, songpa, dongjak,
@@ -81,6 +81,9 @@ class Peoples extends Component {
                             showLabel: true
                         },
                         legend: {
+                            visible: false
+                        },
+                        chartExportMenu: {
                             visible: false
                         }
                     };

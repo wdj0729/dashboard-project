@@ -82,6 +82,9 @@ class BedCnts extends Component {
                         },
                         legend: {
                             visible: false
+                        },
+                        chartExportMenu: {
+                            visible: false
                         }
                     };
             const theme = {

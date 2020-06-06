@@ -9,55 +9,47 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
-import SummaryData from './Summary.json'
+import SummaryData from './Summary2.json'
 
 //API 설정
-const API = 'http://localhost:5000/api/seoul/summary'
+const API = 'http://localhost:5000/api/seoul/total_beds_table'
 
 //console.log(SummaryData);
 
 const columns = [
   { id: 'id', label: '', minWidth: 100, align: 'center' },
-  { id: 'district', label: '자치구', minWidth: 100, align: 'center' },
+  { id: 'house_name', label: '지점명', minWidth: 100, align: 'center' },
+  { id: 'house_type', label: '매물유형', minWidth: 100, align: 'center' },
+  { id: 'room_name', label: '방이름', minWidth: 100, align: 'center' },
+  { id: 'road_address', label: '도로명주소', minWidth: 100, align: 'center' },
   {
-    id: 'population',
-    label: '거주예상 인원수',
+    id: 'deposit',
+    label: '보증금',
     minWidth: 100,
     align: 'center',
     format: (value) => value.toLocaleString('en-US'),
   },
   {
-    id: 'house_cnt',
-    label: '매물 개수',
+    id: 'rent',
+    label: '월세',
     minWidth: 100,
     align: 'center',
     format: (value) => value.toLocaleString('en-US'),
   },
-  {
-    id: 'avg_deposit',
-    label: '평균 보증금',
-    minWidth: 100,
-    align: 'center',
-    format: (value) => value.toFixed(0),
-  },
-  {
-    id: 'avg_rent',
-    label: '평균 월세',
-    minWidth: 100,
-    align: 'center',
-    format: (value) => value.toFixed(0),
-  },
+  { id: 'bed_cnt', label: '인실', minWidth: 100, align: 'center' },
+  { id: 'gender', label: '성별전용', minWidth: 100, align: 'center' },
 ];
 
 const rows = [];
 
-for (var i=0; i<25; i++){
-  rows[i] = createData(i+1, SummaryData[i]["자치구"], SummaryData[i]["거주예상인원수"], SummaryData[i]["매물수"], SummaryData[i]["평균보증금"], SummaryData[i]["평균월세"]);
+for (var i=0; i<4703; i++){
+  rows[i] = createData(i+1,SummaryData[i]["이름"], SummaryData[i]["매물유형"], SummaryData[i]["방이름"], SummaryData[i]["도로명주소"], 
+                        SummaryData[i]["보증금"], SummaryData[i]["월세"], SummaryData[i]["인실"], SummaryData[i]["성별"]);
   //console.log(rows[i]);
 }
 
-function createData(id, district, population, house_cnt, avg_deposit, avg_rent) {
-  return { id, district, population, house_cnt, avg_deposit, avg_rent};
+function createData(id, house_name, house_type, room_name, road_address, deposit, rent, bed_cnt, gender) {
+  return {id,house_name, house_type, room_name, road_address, deposit, rent, bed_cnt, gender};
 }
 
 const useStyles = makeStyles({
@@ -71,7 +63,7 @@ const useStyles = makeStyles({
 });
 
 //HOOK 구조
-export default function StickyHeadTable(props) {
+export default function StickyHeadTable2(props) {
   const classes = useStyles();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -129,7 +121,7 @@ export default function StickyHeadTable(props) {
         </Table>
       </TableContainer>
       <TablePagination
-        rowsPerPageOptions={[10, 25]}
+        rowsPerPageOptions={[10, 25, 50]}
         component="div"
         count={rows.length}
         rowsPerPage={rowsPerPage}

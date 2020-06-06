@@ -67,9 +67,6 @@ class Lines extends Component {
                     showDot: true,
                     zoomable: true,
                 },
-                tooltip: {
-                    suffix: ''
-                },
                 legend: {
                     align: 'bottom'
                 },
@@ -87,6 +84,9 @@ class Lines extends Component {
                             color: '#fa2828'
                         }
                     ]
+                },
+                chartExportMenu: {
+                    visible: false
                 }
             };
         var theme = {
