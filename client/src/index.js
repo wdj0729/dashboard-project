@@ -2,25 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Bars from './components/Bars'
+import Peoples from './components/People';
 import Columns from './components/Columns';
 import Deposits from './components/Deposit';
 import Lines from './components/Lines';
 import HouseTypes from './components/HouseType';
 import BedCnts from './components/BedCnt';
-import Rents from './components/Rent'
+import Rents from './components/Rent';
+import StickyHeadTable from './components/Summary';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <Bars />
-    <Columns />
+    <StickyHeadTable />
+    <Peoples />
     <Deposits />
     <Rents />
-    <Lines />
     <HouseTypes />
     <BedCnts />
+    <Columns />
+    <Lines />
   </React.StrictMode>,
  document.getElementById('root'),
 );

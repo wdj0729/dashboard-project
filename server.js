@@ -22,7 +22,7 @@ const connection = mysql.createConnection({
 });
 connection.connect();
 
-//서울시 요약(서울시 전체방갯수, 전체침대갯수, 평균보증금, 평균월세)
+//서울시 요약(서울시 전체방갯수, 전체침대갯수, 평균보증금, 평균월세) ok
 app.get('/api/seoul/summary',(req, res)=>{
     connection.query(
         `
@@ -39,7 +39,7 @@ app.get('/api/seoul/summary',(req, res)=>{
     )
 })
 
-//자치구별 요약값(성비율 미반영)
+//자치구별 요약값(성비율 미반영) ok
 app.get('/api/seoul/summary_by_district',(req, res)=>{
     connection.query(
         `
@@ -146,12 +146,11 @@ app.get('/api/seoul/bed_cnt_group',(req, res)=>{
 app.get('/api/seoul/monthly_rent_interval',(req, res)=>{
     connection.query(
         `
-        SELECT count(if(b.monthly_rent>0 and b.monthly_rent <=20,true,null)) "0~20", 
-        count(if(b.monthly_rent>20 and b.monthly_rent <=40,true,null)) "20~40",
-        count(if(b.monthly_rent>40 and b.monthly_rent <=60,true,null)) "40~60",
-        count(if(b.monthly_rent>60 and b.monthly_rent <=80,true,null)) "60~80",
-        count(if(b.monthly_rent>80 and b.monthly_rent <=100,true,null)) "80~100",
-        count(if(b.monthly_rent>100,true,null)) "100~"
+        SELECT count(if(b.monthly_rent>10 and b.monthly_rent <=20,true,null)) "10~20", 
+        count(if(b.monthly_rent>20 and b.monthly_rent <=30,true,null)) "20~30",
+        count(if(b.monthly_rent>30 and b.monthly_rent <=40,true,null)) "30~40",
+        count(if(b.monthly_rent>40 and b.monthly_rent <=50,true,null)) "40~50",
+        count(if(b.monthly_rent>50,true,null)) "50~"
         FROM sharehouse.beds as b;
         `,
         (err, rows, fields) => {
@@ -164,10 +163,10 @@ app.get('/api/seoul/monthly_rent_interval',(req, res)=>{
 app.get('/api/seoul/deposit_interval',(req, res)=>{
     connection.query(
         `
-        SELECT count(if(b.deposit>0 and b.deposit <=300,true,null)) "0~300", 
-        count(if(b.deposit>300 and b.deposit <=500,true,null)) "300~500",
-        count(if(b.deposit>500 and b.deposit <=1000,true,null)) "500~1000",
-        count(if(b.deposit>1000,true,null)) "1000~"
+        SELECT count(if(b.deposit>0 and b.deposit <=100,true,null)) "0~100", 
+        count(if(b.deposit>100 and b.deposit <=200,true,null)) "100~200",
+        count(if(b.deposit>200 and b.deposit <=300,true,null)) "200~300",
+        count(if(b.deposit>300,true,null)) "300~"
         FROM sharehouse.beds as b;
         `,
         (err, rows, fields) => {

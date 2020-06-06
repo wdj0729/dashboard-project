@@ -13,7 +13,7 @@ class Lines extends Component {
         .then(data => console.log(data))
         var container = document.getElementById('line');
         var data = {
-                categories: ['03/01/2020', '04/01/2020', '05/01/2020', '06/01/2020',],
+                categories: ['05/01/2020', '06/01/2020', '07/01/2020', '08/01/2020',],
                 series: [
                     {
                         name: '전체유형',
@@ -76,14 +76,14 @@ class Lines extends Component {
                 plot: {
                     bands: [
                         {
-                            range: ['04/01/2020', '05/01/2020','06/01/2020'],
+                            range: ['05/01/2020', '06/01/2020',],
                             color: 'gray',
                             opacity: 0.2
                         }
                     ],
                     lines: [
                         {
-                            value: '04/01/2020',
+                            value: '05/01/2020',
                             color: '#fa2828'
                         }
                     ]
@@ -110,9 +110,7 @@ class Lines extends Component {
     }
     render() {
         return (
-            <div>
-                Lines.js를 App.js에 보이도록 이동
-            </div>
+            <div id="line"></div>
         );
     }
 }

@@ -13,7 +13,7 @@ class Columns extends Component {
         .then(data => console.log(data))
         var container = document.getElementById('column');
         var data = {
-            categories: ['03/01/2020', '04/01/2020', '05/01/2020', '06/01/2020',],
+            categories: ['05/01/2020', '06/01/2020', '07/01/2020', '08/01/2020',],
             series: [
                 {
                     name: '마포구',
@@ -73,9 +73,7 @@ class Columns extends Component {
     }
     render() {
         return (
-            <div>
-                Column.js를 App.js에 보이도록 이동
-            </div>
+            <div id="column"></div>
         );
     }
 }
