@@ -28,7 +28,18 @@
   margin-left:25%;
   background-color: white;
   border: 2px solid #E6E6E6;
-  border-radius: 12px;
+  border-radius: .25rem;
+}
+
+.App-logo{
+  width:200px;
+  position: absolute;
+  top:1%;
+  left:25%;
+}
+
+.App-date{
+  font-weight: 200;
 }
 
 .App-row p{
@@ -37,6 +48,7 @@
 
 .seoul-title p{
   font-size: 28px;
+  font-weight: 500;
 }
 
 .seoul-population .p-number{
@@ -68,9 +80,19 @@
   margin-left: 12%;
 }
 
+#people > div{
+  border: 1px solid #E6E6E6;
+  border-radius: .25rem;
+}
+
 #districtType {
   margin-top:5%;
-  margin-left: 12%;
+  margin-left: 27%;
+}
+
+#districtType> div{
+  border: 2px solid #E6E6E6;
+  border-radius: .25rem;
 }
 
 #house {
@@ -78,33 +100,66 @@
   margin-left: 12%;
 }
 
+#house> div{
+  border: 2px solid #E6E6E6;
+  border-radius: .25rem;
+}
 
 #deposit {
   margin-top:5%;
-  margin-left: 12%;
+  margin-left: 27%;
+}
+
+#deposit> div{
+  border: 2px solid #E6E6E6;
+  border-radius: .25rem;
 }
 
 #rent {
   margin-top:5%;
-  margin-left: 12%;
+  margin-left: 27%;
+}
+
+#rent> div{
+  border: 2px solid #E6E6E6;
+  border-radius: .25rem;
 }
 
 #houseType {
   margin-top:5%;
-  margin-left: 12%;
+  margin-left: 27%;
+}
+
+#houseType> div{
+  border: 2px solid #E6E6E6;
+  border-radius: .25rem;
 }
 
 #bedCnt {
   margin-top:5%;
-  margin-left: 12%;
+  margin-left: 27%;
+  margin-bottom: 5%;
 }
 
-#column{
-  margin-top:5%;
-  margin-left: 12%;
+#bedCnt> div{
+  border: 2px solid #E6E6E6;
+  border-radius: .25rem;
 }
 
-#line {
-  margin-top:5%;
-  margin-left: 12%;
+.Summary-title p{
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.Summary2-title p{
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
+}
+
+#people p{
+  font-size: 28px;
+  font-weight: 500;
+  margin-left: 38%;
 }

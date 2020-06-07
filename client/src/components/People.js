@@ -65,7 +65,10 @@ class Peoples extends Component {
                         chart: {
                             width: 1160,
                             height: 650,
-                            title: '서울특별시 거주예상 인원수 현황',
+                            title: {
+                                text: '서울특별시 거주예상 인원수 현황',
+                                align: 'center'
+                            },
                             format: ','
                         },
                         yAxis: {
@@ -111,7 +114,9 @@ class Peoples extends Component {
     };
     render() {
         return (
-            <div id="people"></div>
+            <div id="people">
+                <p>서울시 차트</p>
+            </div>
         );
     }
 }

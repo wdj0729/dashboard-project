@@ -67,7 +67,10 @@ class HouseTypes extends Component {
                         chart: {
                             width: 700,
                             height: 700,
-                            title: '서울특별시 매물 유형 분포율',
+                            title: {
+                                text: '서울특별시 매물 유형 분포율',
+                                align: 'center'
+                            },
                             format: function(value, chartType, areaType, valuetype, legendName) {
                             if (areaType === 'makingSeriesLabel') { // formatting at series area
                                 value = value + '%';

@@ -95,6 +95,11 @@ export default function StickyHeadTable(props) {
 
   return (
     <Paper className={classes.root}>
+      <br></br>
+      <div className="Summary-title">
+          <p>자치구별 현황</p>
+      </div>
+      <br></br>
       <TableContainer className={classes.container}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>

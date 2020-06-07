@@ -24,39 +24,18 @@ class App extends Component {
           //json 데이터 저장
           const seoul = json;
           //console.log(seoul);
-          const seoulObj = seoul[0]
-          for (let prop in seoulObj){
-            if(prop==='전체거주예상인원수'){
-                this.setState({
-                  population: seoulObj[prop]
-                })
-                //console.log('전체거주예상인원수: ' + population)
-            }
-          }
-          for (let prop in seoulObj){
-            if(prop==='전체매물갯수'){
-                this.setState({
-                  houses: seoulObj[prop]
-                })
-                //console.log('전체매물갯수: ' + houses)
-            }
-          }
-          for (let prop in seoulObj){
-            if(prop==='평균보증금'){
-                this.setState({
-                  deposit: seoulObj[prop].toFixed(0)
-                })
-                //console.log('평균보증금: ' + deposit)
-            }
-          }
-          for (let prop in seoulObj){
-            if(prop==='평균월세'){
-                this.setState({
-                  rent: seoulObj[prop].toFixed(0)
-                })
-                //console.log('평균월세: ' + rent)
-            }
-          }
+          this.setState({
+            population: seoul[0]['전체거주예상인원수']
+          })
+          this.setState({
+            houses: seoul[0]['전체매물갯수']
+          })
+          this.setState({
+            deposit: seoul[0]['평균보증금'].toFixed(0)
+          })
+          this.setState({
+            rent: seoul[0]['평균월세'].toFixed(0)
+          })
       })
   };
 
@@ -64,7 +43,10 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">쉐어하우스 실시간 현황판</h1>
+          <img className="App-logo" src="logo.png" alt="" title="쉐어하우스 로고"></img>
+          <br></br><br></br>
+          <h3 className="App-title">쉐어하우스(Sharehouse)<br></br>실시간 현황판</h3>
+          <h6 className="App-date">마지막 업데이트: 2020.6.7</h6>
         </header>
         <div className="App-contatiner">
           <br></br><br></br>

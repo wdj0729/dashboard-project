@@ -65,7 +65,10 @@ class Houses extends Component {
                         chart: {
                             width: 1160,
                             height: 650,
-                            title: '서울특별시 자치구별 매물수 현황',
+                            title: {
+                                text: '서울특별시 자치구별 매물수 현황',
+                                align: 'center'
+                            },
                             format: ','
                         },
                         yAxis: {

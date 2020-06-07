@@ -4,9 +4,7 @@ import './index.css';
 import App from './App';
 import Peoples from './components/People';
 import Houses from './components/House';
-import Columns from './components/Columns';
 import Deposits from './components/Deposit';
-import Lines from './components/Lines';
 import HouseTypes from './components/HouseType';
 import BedCnts from './components/BedCnt';
 import Rents from './components/Rent';
@@ -27,8 +25,6 @@ ReactDOM.render(
     <HouseTypes />
     <BedCnts />
     <StickyHeadTable2 />
-    <Columns />
-    <Lines />
   </React.StrictMode>,
  document.getElementById('root'),
 );

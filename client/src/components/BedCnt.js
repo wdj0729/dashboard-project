@@ -63,7 +63,10 @@ class BedCnts extends Component {
                         chart: {
                             width: 700,
                             height: 700,
-                            title: '서울특별시 1~4인실 점유율',
+                            title: {
+                                text: '서울특별시 1~4인실 점유율',
+                                align: 'center'
+                            },
                             format: function(value, chartType, areaType, valuetype, legendName) {
                             if (areaType === 'makingSeriesLabel') { // formatting at series area
                                 value = value + '%';
