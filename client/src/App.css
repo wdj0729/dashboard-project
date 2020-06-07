@@ -76,8 +76,8 @@
 }
 
 #people {
-  margin-top:5%;
-  margin-left: 12%;
+  padding-top:3%;
+  padding-left: 12%;
 }
 
 #people > div{
@@ -86,8 +86,8 @@
 }
 
 #districtType {
-  margin-top:5%;
-  margin-left: 27%;
+  padding-top:3%;
+  padding-left: 27%;
 }
 
 #districtType> div{
@@ -96,8 +96,8 @@
 }
 
 #house {
-  margin-top:5%;
-  margin-left: 12%;
+  padding-top:3%;
+  padding-left: 12%;
 }
 
 #house> div{
@@ -106,8 +106,8 @@
 }
 
 #deposit {
-  margin-top:5%;
-  margin-left: 27%;
+  padding-top:3%;
+  padding-left: 27%;
 }
 
 #deposit> div{
@@ -116,8 +116,8 @@
 }
 
 #rent {
-  margin-top:5%;
-  margin-left: 27%;
+  padding-top:3%;
+  padding-left: 27%;
 }
 
 #rent> div{
@@ -126,8 +126,8 @@
 }
 
 #houseType {
-  margin-top:5%;
-  margin-left: 27%;
+  padding-top:3%;
+  padding-left: 27%;
 }
 
 #houseType> div{
@@ -136,9 +136,9 @@
 }
 
 #bedCnt {
-  margin-top:5%;
-  margin-left: 27%;
-  margin-bottom: 5%;
+  padding-top:3%;
+  padding-left: 27%;
+  padding-bottom: 3%;
 }
 
 #bedCnt> div{
@@ -161,5 +161,70 @@
 #people p{
   font-size: 28px;
   font-weight: 500;
-  margin-left: 38%;
+  padding-left: 38%;
+}
+
+.App-menu{
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #dee2e6;
+  padding: 2px;
+  height: 60px;
+}
+
+.App-menu button{
+  background-color: #f7f7f7;
+  border: 0 white;
+  outline:0;
+  font-size: 20px;
+  color: rgba(0,0,0,.5);
+  padding-top: 15px;
+}
+
+.App-menu button:hover{
+  color: black;
+}
+
+.App-menu #btn1{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.App-menu #btn2{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.App-menu #btn3{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.App-menu #btn4{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+svg text {
+  pointer-events: none;
+}
+svg .municipality {
+  fill: white;
+  stroke: orange;
+}
+svg #map text {
+  color: #333;
+  font-size: 12px;
+  text-anchor: middle;
+}
+
+a.top {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  display: none;
+}
+
+a.top img{
+  background-color: white;
+  width:50px;
 }

@@ -9,14 +9,19 @@
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <!--material-ui-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <!--jquery-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <!--d3.js-->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -31,6 +36,7 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <a href="#top" class="top"><img src="scroll_top_button.png" alt=""></a>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -41,5 +47,87 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+    <div id="chart"></div>
+  <script>
+    $(document).ready(function(){
+        $('#btn1').click(function(){
+
+        var offset = $('.MuiPaper-root.makeStyles-root-1.MuiPaper-elevation1.MuiPaper-rounded').offset(); //선택한 태그의 위치를 반환
+
+        //animate()메서드를 이용해서 선택한 태그의 스크롤 위치를 지정해서 0.4초 동안 부드럽게 해당 위치로 이동함 
+
+        $('html').animate({scrollTop : offset.top}, 400);
+        });
+    });
+    $(document).ready(function(){
+        $('#btn4').click(function(){
+
+        var offset = $('.MuiPaper-root.makeStyles-root-3.MuiPaper-elevation1.MuiPaper-rounded').offset(); //선택한 태그의 위치를 반환
+
+        //animate()메서드를 이용해서 선택한 태그의 스크롤 위치를 지정해서 0.4초 동안 부드럽게 해당 위치로 이동함 
+
+        $('html').animate({scrollTop : offset.top}, 400);
+        });
+    });
+    $(document).ready(function(){
+        $('#btn2').click(function(){
+
+        var offset = $('#people').offset(); //선택한 태그의 위치를 반환
+
+        //animate()메서드를 이용해서 선택한 태그의 스크롤 위치를 지정해서 0.4초 동안 부드럽게 해당 위치로 이동함 
+
+        $('html').animate({scrollTop : offset.top}, 400);
+        });
+    });
+  </script>
+   <script>
+    // 자바스크립트는 여기에
+    var width = 800, height = 600;
+
+    var svg = d3.select("#chart").append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    var map = svg.append("g").attr("id", "map"),
+    places = svg.append("g").attr("id", "places");
+
+    var projection = d3.geo.mercator()
+        .center([126.9895, 37.5651])
+        .scale(100000)
+        .translate([width/2, height/2]);
+
+    var path = d3.geo.path().projection(projection);
+    
+    d3.json("seoul_map.json", function(error, data) {
+        var features = topojson.feature(data, data.objects.seoul_municipalities_geo).features;
+    
+        map.selectAll("path")
+            .data(features)
+            .enter().append("path")
+            .attr("class", function(d) { console.log(); return "municipality c" + d.properties.code })
+            .attr("d", path);
+        
+        map.selectAll("text")
+            .data(features)
+            .enter().append("text")
+            .attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
+            .attr("dy", ".30em")
+            .attr("class", "municipality-label")
+            .text(function(d) { return d.properties.name; })
+    });
+  </script>
+  <script>
+    $( window ).scroll( function() {
+      if ( $( this ).scrollTop() > 200 ) {
+        $( '.top' ).fadeIn();
+      } else {
+        $( '.top' ).fadeOut();
+      }
+    } );
+    $( '.top' ).click( function() {
+      $( 'html, body' ).animate( { scrollTop : 0 }, 400 );
+      return false;
+    } );
+  </script>  
+</body>
 </html>

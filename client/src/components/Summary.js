@@ -97,7 +97,7 @@ export default function StickyHeadTable(props) {
     <Paper className={classes.root}>
       <br></br>
       <div className="Summary-title">
-          <p>자치구별 현황</p>
+          <p>서울특별시 현황</p>
       </div>
       <br></br>
       <TableContainer className={classes.container}>

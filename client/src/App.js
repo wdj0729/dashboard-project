@@ -75,9 +75,15 @@ class App extends Component {
           </div>
         </div>
         <br></br><br></br>
+      <div className="App-menu">
+          <button id="btn1">서울특별시 현황</button>
+          <button id="btn2">데이터 차트</button>
+          <button id="btn3">입지 분석</button>
+          <button id="btn4">전체 매물 상세 정보</button>
+      </div>
+      <br></br><br></br>
       </div>
     );
   }
 }
-
 export default App;

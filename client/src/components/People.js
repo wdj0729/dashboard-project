@@ -115,7 +115,7 @@ class Peoples extends Component {
     render() {
         return (
             <div id="people">
-                <p>서울시 차트</p>
+                <p>데이터 차트</p>
             </div>
         );
     }
