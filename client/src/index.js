@@ -16,6 +16,12 @@ import * as serviceWorker from './serviceWorker';
 ReactDOM.render(
   <React.StrictMode>
     <App />
+  </React.StrictMode>,
+ document.getElementById('root'),
+);
+
+ReactDOM.render(
+  <React.StrictMode>
     <StickyHeadTable />
     <Peoples />
     <DistrictType />
@@ -26,7 +32,7 @@ ReactDOM.render(
     <BedCnts />
     <StickyHeadTable2 />
   </React.StrictMode>,
- document.getElementById('root'),
+ document.getElementById('chart'),
 );
 
 // If you want your app to work offline and load faster, you can change

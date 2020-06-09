@@ -78,7 +78,7 @@ app.get('/api/seoul/filled_bedcnt_by_district',(req, res)=>{
     )
 })
 
-//전체 매물 리스트 테이블(매물링크 미구현)
+//전체 매물 리스트 테이블(매물링크 미구현) ok
 app.get('/api/seoul/total_beds_table',(req, res)=>{
     connection.query(
         `
