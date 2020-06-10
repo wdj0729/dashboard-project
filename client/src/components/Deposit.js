@@ -18,13 +18,14 @@ class Deposits extends Component {
             const donuts = json;
             //console.log(donuts);
             //각 인덱스별 객체에 저장
-            let one= donuts[0]['0~100'];
-            let two= donuts[0]['100~200'];
-            let three= donuts[0]['200~300'];
-            let four= donuts[0]['300~'];
+            let one= donuts[0]['0~50'];
+            let two= donuts[0]['50~100'];
+            let three= donuts[0]['100~200'];
+            let four= donuts[0]['200~300'];
+            let five= donuts[0]['300~'];
   
             // 전체 개수
-            const total_num = one + two + three + four;
+            const total_num = one + two + three + four + five;
             //console.log('total_num: ' + total_num)
             // 각 보증금별 분포율
             one = (one*100)/total_num;
@@ -35,26 +36,32 @@ class Deposits extends Component {
             three =  three.toFixed(1);
             four = (four*100)/total_num;
             four = four.toFixed(1)
+            five = (five*100)/total_num;
+            five = five.toFixed(1)
 
             const container = document.getElementById('deposit');
             let data = {
                         categories: ['deposit'],
                         series: [
                             {
-                                name: '0~100',
-                                data: one
-                            },
-                            {
-                                name: '100~200',
+                                name: '50~100',
                                 data: two
                             },
                             {
-                                name: '200~300',
+                                name: '100~200',
                                 data: three
                             },
                             {
-                                name: '300~',
+                                name: '0~50',
+                                data: one
+                            },
+                            {
+                                name: '200~300',
                                 data: four
+                            },
+                            {
+                                name: '300~',
+                                data: five
                             },
                         ]
                     };
@@ -63,7 +70,7 @@ class Deposits extends Component {
                             width: 700,
                             height: 700,
                             title: {
-                                text: '서울특별시 보증금 분포율',
+                                text: '서울특별시 보증금 비율',
                                 align: 'center'
                             },
                             format: function(value, chartType, areaType, valuetype, legendName) {

@@ -121,7 +121,7 @@ class DistrictTypes extends Component {
                             width: 700,
                             height: 700,
                             title: {
-                                text: '서울특별시 TOP 10 자치구별 거주예상 인원 분포율',
+                                text: '서울특별시 TOP 10 자치구별 거주예상 인원 비율',
                                 align: 'center'
                             },
                             format: function(value, chartType, areaType, valuetype, legendName) {

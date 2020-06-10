@@ -75,7 +75,7 @@ class Houses extends Component {
                             title: '자치구',
                         },
                         xAxis: {
-                            title: '매물수(개)',
+                            title: '침대수(개)',
                             min: 0,
                             max: 1000,
                             suffix: ''

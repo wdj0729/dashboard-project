@@ -22,18 +22,20 @@ class HouseTypes extends Component {
             //각 인덱스별 객체에 저장
             let villa = pies[0]['TOTAL_BED_CNT'];
             let apt = pies[1]['TOTAL_BED_CNT'];
-            //let guitar = pies[2]['TOTAL_BED_CNT'];
+            let etc = pies[2]['TOTAL_BED_CNT'];
             let house = pies[3]['TOTAL_BED_CNT'];
             let oneroom = pies[4]['TOTAL_BED_CNT'];
             let office = pies[5]['TOTAL_BED_CNT'];
             // 전체 유형별 개수
-            const total_num = villa + apt + house + oneroom + office;
+            const total_num = villa + apt + house + oneroom + office + etc;
             //console.log('total_num: ' + total_num)
             // 각 유형별 점유율
             villa = (villa*100)/total_num;
             villa = villa.toFixed(1);
             apt = (apt*100)/total_num;
             apt = apt.toFixed(1);
+            etc = (etc*100)/total_num;
+            etc = etc.toFixed(1);
             house = (house*100)/total_num;
             house = house.toFixed(1)
             oneroom = (oneroom*100)/total_num;
@@ -48,6 +50,10 @@ class HouseTypes extends Component {
                             {
                                 name: '아파트',
                                 data: apt
+                            },
+                            {
+                                name: '기타',
+                                data: etc
                             },
                             {
                                 name: '빌라',
@@ -68,7 +74,7 @@ class HouseTypes extends Component {
                             width: 700,
                             height: 700,
                             title: {
-                                text: '서울특별시 매물 유형 분포율',
+                                text: '서울특별시 매물 유형 비율',
                                 align: 'center'
                             },
                             format: function(value, chartType, areaType, valuetype, legendName) {

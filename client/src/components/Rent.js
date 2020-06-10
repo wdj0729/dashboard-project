@@ -69,7 +69,7 @@ class Rents extends Component {
                             width: 700,
                             height: 700,
                             title: {
-                                text: '서울특별시 월세 분포율',
+                                text: '서울특별시 월세 비율',
                                 align: 'center'
                             },
                             format: function(value, chartType, areaType, valuetype, legendName) {

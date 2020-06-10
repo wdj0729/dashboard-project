@@ -28,7 +28,7 @@ const columns = [
   },
   {
     id: 'house_cnt',
-    label: '매물 개수',
+    label: '매물수',
     minWidth: 100,
     align: 'center',
     format: (value) => value.toLocaleString('en-US'),
@@ -89,7 +89,7 @@ export default function StickyHeadTable(props) {
     fetch(API)
     .then(res => res.json())
     .then(json =>{
-          //console.log(json);
+          console.log(json);
       })
   })
 
