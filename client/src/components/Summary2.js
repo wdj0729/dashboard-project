@@ -43,6 +43,24 @@ const columns = [
 const rows = [];
 
 for (var i=0; i<4703; i++){
+  if(SummaryData[i]["매물유형"]==="villa"){
+    SummaryData[i]["매물유형"]="빌라";
+  }
+  if(SummaryData[i]["매물유형"]==="etc"){
+    SummaryData[i]["매물유형"]="기타";
+  }
+  if(SummaryData[i]["매물유형"]==="office"){
+    SummaryData[i]["매물유형"]="오피스텔";
+  }
+  if(SummaryData[i]["매물유형"]==="apt"){
+    SummaryData[i]["매물유형"]="아파트";
+  }
+  if(SummaryData[i]["매물유형"]==="oneroom"){
+    SummaryData[i]["매물유형"]="원룸";
+  }
+  if(SummaryData[i]["매물유형"]==="house"){
+    SummaryData[i]["매물유형"]="단독주택";
+  }
   rows[i] = createData(i+1,SummaryData[i]["이름"], SummaryData[i]["매물유형"], SummaryData[i]["방이름"], SummaryData[i]["도로명주소"], 
                         SummaryData[i]["보증금"], SummaryData[i]["월세"], SummaryData[i]["인실"], SummaryData[i]["성별"]);
   //console.log(rows[i]);
@@ -89,7 +107,7 @@ export default function StickyHeadTable2(props) {
     <Paper className={classes.root}>
       <br></br>
       <div className="Summary2-title">
-          <p>전체 매물 상세 정보</p>
+          <p>침대 상세 정보</p>
       </div>
       <TableContainer className={classes.container}>
         <Table stickyHeader aria-label="sticky table">

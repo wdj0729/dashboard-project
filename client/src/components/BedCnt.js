@@ -64,7 +64,7 @@ class BedCnts extends Component {
                             width: 700,
                             height: 700,
                             title: {
-                                text: '서울특별시 1~4인실 점유율',
+                                text: '서울특별시 1~4인실 비율',
                                 align: 'center'
                             },
                             format: function(value, chartType, areaType, valuetype, legendName) {

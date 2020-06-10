@@ -26,7 +26,7 @@ connection.connect();
 app.get('/api/seoul/summary',(req, res)=>{
     connection.query(
         `
-        SELECT count(if(b.is_full=true,true,null)) 전체거주예상인원수, sum(r.bed_cnt) 전체매물갯수, avg(b.deposit) 평균보증금, avg(b.monthly_rent) 평균월세
+        SELECT count(if(b.is_full=true,true,null)) 전체거주예상인원수, count(h.id) 전체매물갯수, avg(b.deposit) 평균보증금, avg(b.monthly_rent) 평균월세
         FROM sharehouse.houses as h
         INNER JOIN sharehouse.rooms as r
         ON h.id = r.house_id
@@ -163,7 +163,8 @@ app.get('/api/seoul/monthly_rent_interval',(req, res)=>{
 app.get('/api/seoul/deposit_interval',(req, res)=>{
     connection.query(
         `
-        SELECT count(if(b.deposit>0 and b.deposit <=100,true,null)) "0~100", 
+        SELECT count(if(b.deposit>0 and b.deposit <=50,true,null)) "0~50",
+        count(if(b.deposit>50 and b.deposit <=100,true,null)) "50~100",
         count(if(b.deposit>100 and b.deposit <=200,true,null)) "100~200",
         count(if(b.deposit>200 and b.deposit <=300,true,null)) "200~300",
         count(if(b.deposit>300,true,null)) "300~"
