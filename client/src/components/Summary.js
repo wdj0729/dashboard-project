@@ -35,14 +35,21 @@ const columns = [
   },
   {
     id: 'avg_deposit',
-    label: '평균 보증금',
+    label: '평균 보증금(만원)',
     minWidth: 100,
     align: 'center',
     format: (value) => value.toFixed(0),
   },
   {
     id: 'avg_rent',
-    label: '평균 월세',
+    label: '평균 월세(만원)',
+    minWidth: 100,
+    align: 'center',
+    format: (value) => value.toFixed(0),
+  },
+  {
+    id: 'is_full',
+    label: '공실율(%)',
     minWidth: 100,
     align: 'center',
     format: (value) => value.toFixed(0),
@@ -52,12 +59,12 @@ const columns = [
 const rows = [];
 
 for (var i=0; i<25; i++){
-  rows[i] = createData(i+1, SummaryData[i]["자치구"], SummaryData[i]["거주예상인원수"], SummaryData[i]["매물수"], SummaryData[i]["평균보증금"], SummaryData[i]["평균월세"]);
+  rows[i] = createData(i+1, SummaryData[i]["자치구"], SummaryData[i]["거주예상인원수"], SummaryData[i]["매물수"], SummaryData[i]["평균보증금"], SummaryData[i]["평균월세"], SummaryData[i]["공실율"]);
   //console.log(rows[i]);
 }
 
-function createData(id, district, population, house_cnt, avg_deposit, avg_rent) {
-  return { id, district, population, house_cnt, avg_deposit, avg_rent};
+function createData(id, district, population, house_cnt, avg_deposit, avg_rent, is_full) {
+  return { id, district, population, house_cnt, avg_deposit, avg_rent, is_full};
 }
 
 const useStyles = makeStyles({

@@ -45,18 +45,18 @@ class Houses extends Component {
                 const container = document.getElementById('house');
                 let data = {
                         categories: ['마포구', '강남구', '서대문구', '관악구', '광진구', 
-                                    '서초구', '동대문구', '용산구', '동작구', '성북구',
-                                    '중구', '영등포구', '종로구', '성동구', '구로구', 
-                                    '은평구', '노원구', '송파구', '강동구','강서구', 
-                                    '강북구', '중랑구', '도봉구', '양천구', '금천구',],
+                                    '동대문구', '서초구', '용산구', '동작구', '성북구',
+                                    '중구', '종로구', '영등포구', '성동구', '구로구', 
+                                    '은평구', '노원구', '송파구', '강북구', '강동구', 
+                                    '강서구', '중랑구', '도봉구', '양천구', '금천구',],
                         series: [
                             {
                                 name: 'house',
                                 data: [mapo, gangnam, seodaemoon, gwanak, gwangjin,
-                                    seocho, dongdaemoon, yongsan, dongjak, seongbook,
-                                    jungu, yeongdungpo, jongro, seongdong, guro,
-                                    eunpyeong, nowon, songpa, gangdong, gangseo,
-                                    gangbook, jungrang, dobong, yangcheon, gumchun,
+                                    dongdaemoon, seocho, yongsan, dongjak, seongbook,
+                                    jungu, jongro, yeongdungpo, seongdong, guro,
+                                    eunpyeong, nowon, songpa, gangbook, gangdong,
+                                    gangseo, jungrang, dobong, yangcheon, gumchun,
                                     ]
                             }
                         ]
@@ -75,7 +75,7 @@ class Houses extends Component {
                             title: '자치구',
                         },
                         xAxis: {
-                            title: '침대수(개)',
+                            title: '매물수(개)',
                             min: 0,
                             max: 1000,
                             suffix: ''

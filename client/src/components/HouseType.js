@@ -48,20 +48,20 @@ class HouseTypes extends Component {
                         categories: ['house-type'],
                         series: [
                             {
-                                name: '아파트',
-                                data: apt
+                                name: '빌라',
+                                data: villa
                             },
                             {
                                 name: '기타',
                                 data: etc
                             },
                             {
-                                name: '빌라',
-                                data: villa
-                            },
-                            {
                                 name: '단독주택',
                                 data: house
+                            },
+                            {
+                                name: '아파트',
+                                data: apt
                             },
                             {
                                 name: '원룸 + 오피스텔',
