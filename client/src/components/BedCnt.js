@@ -50,12 +50,12 @@ class BedCnts extends Component {
                                 data: two
                             },
                             {
-                                name: '4인실',
-                                data: four
-                            },
-                            {
                                 name: '3인실',
                                 data: triple
+                            },
+                            {
+                                name: '4인실',
+                                data: four
                             },
                         ]
                     };

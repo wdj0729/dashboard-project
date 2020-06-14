@@ -79,40 +79,40 @@ class DistrictTypes extends Component {
                                 data: mapo
                             },
                             {
-                                name: '동대문구',
-                                data: dongdaemoon
-                            },
-                            {
-                                name: '서대문구',
-                                data: seodaemoon
-                            },
-                            {
                                 name: '강남구',
                                 data: gangnam
                             },
                             {
-                                name: '용산구',
-                                data: yongsan
+                                name: '동대문구',
+                                data: dongdaemoon
                             },
                             {
                                 name: '관악구',
                                 data: gwanak
                             },
                             {
+                                name: '서대문구',
+                                data: seodaemoon
+                            },
+                            {
                                 name: '서초구',
                                 data: seocho
+                            },
+                            {
+                                name: '용산구',
+                                data: yongsan
                             },
                             {
                                 name: '광진구',
                                 data: gwangjin
                             },
                             {
-                                name: '노원구',
-                                data: nowon
-                            },
-                            {
                                 name: '성북구',
                                 data: seongbook
+                            },
+                            {
+                                name: '노원구',
+                                data: nowon
                             },
                         ]
                     };

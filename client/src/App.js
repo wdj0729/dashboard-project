@@ -46,7 +46,7 @@ class App extends Component {
           <img className="App-logo" src="logo.png" alt="" title="쉐어하우스 로고"></img>
           <br></br><br></br>
           <h3 className="App-title">쉐어하우스(Sharehouse)<br></br>실시간 현황판</h3>
-          <h6 className="App-date">마지막 업데이트: 2020.6.10</h6>
+          <h6 className="App-date">마지막 업데이트: 2020.6.14</h6>
         </header>
         <div className="App-contatiner">
           <br></br><br></br>
@@ -78,8 +78,7 @@ class App extends Component {
         <div className="App-menu">
             <button id="btn1">서울특별시 현황</button>
             <button id="btn2">데이터 차트</button>
-            <button id="btn3">입지 분석</button>
-            <button id="btn4">매물 상세 정보</button>
+            <button id="btn3">매물 상세 정보</button>
         </div>
       </div>
     );

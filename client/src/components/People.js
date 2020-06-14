@@ -44,19 +44,19 @@ class Peoples extends Component {
 
                 const container = document.getElementById('people');
                 let data = {
-                        categories: ['마포구', '동대문구', '서대문구', '강남구', '용산구', 
-                                    '관악구', '서초구', '광진구', '노원구', '성북구',
-                                    '성동구', '영등포구', '종로구', '송파구', '동작구', 
-                                    '중구', '강북구', '구로구', '은평구','중랑구', 
-                                    '강동구', '강서구', '도봉구', '양천구', '금천구',],
+                        categories: ['마포구', '강남구', '동대문구', '관악구', '서대문구', 
+                                     '서초구', '용산구', '광진구', '중구', '성북구',
+                                    '종로구', '성동구', '영등포구', '동작구', '노원구',
+                                    '송파구', '구로구', '은평구', '중랑구', '강북구',
+                                    '도봉구', '강동구', '금천구', '강서구', '양천구'],
                         series: [
                             {
                                 name: 'people',
-                                data: [mapo, dongdaemoon, seodaemoon, gangnam, yongsan,
-                                    gwanak, seocho, gwangjin, nowon, seongbook,
-                                    seongdong, yeongdungpo, jongro, songpa, dongjak,
-                                    jungu, gangbook, guro, eunpyeong, jungrang,
-                                    gangdong, gangseo, dobong, yangcheon, gumchun,
+                                data: [mapo, gangnam, dongdaemoon, gwanak, seodaemoon,
+                                    seocho, yongsan, gwangjin, jungu, seongbook,
+                                    jongro, seongdong, yeongdungpo, dongjak, nowon,
+                                    songpa, guro, eunpyeong, jungrang, gangbook,
+                                    dobong, gangdong, gumchun, gangseo, yangcheon 
                                     ]
                             }
                         ]
@@ -77,7 +77,7 @@ class Peoples extends Component {
                         xAxis: {
                             title: '인원수(명)',
                             min: 0,
-                            max: 300,
+                            max: 500,
                             suffix: ''
                         },
                         series: {

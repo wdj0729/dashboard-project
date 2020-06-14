@@ -24,14 +24,14 @@ const columns = [
   { id: 'road_address', label: '도로명주소', minWidth: 100, align: 'center' },
   {
     id: 'deposit',
-    label: '보증금',
+    label: '보증금(만원)',
     minWidth: 100,
     align: 'center',
     format: (value) => value.toLocaleString('en-US'),
   },
   {
     id: 'rent',
-    label: '월세',
+    label: '월세(만원)',
     minWidth: 100,
     align: 'center',
     format: (value) => value.toLocaleString('en-US'),
@@ -42,7 +42,7 @@ const columns = [
 
 const rows = [];
 
-for (var i=0; i<4703; i++){
+for (var i=0; i<4828; i++){
   if(SummaryData[i]["매물유형"]==="villa"){
     SummaryData[i]["매물유형"]="빌라";
   }
@@ -107,7 +107,7 @@ export default function StickyHeadTable2(props) {
     <Paper className={classes.root}>
       <br></br>
       <div className="Summary2-title">
-          <p>침대 상세 정보</p>
+          <p>매물 상세 정보</p>
       </div>
       <TableContainer className={classes.container}>
         <Table stickyHeader aria-label="sticky table">
