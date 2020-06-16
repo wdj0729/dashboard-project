@@ -33,7 +33,7 @@ app.get('/api/sharekim/house_type_distribution',(req, res)=>{
                 INNER JOIN
             sharehouse.rooms AS r ON h.id = r.house_id
         WHERE
-            DATE(h.created_at) >= DATE_FORMAT(NOW(), '%%Y-%%m-01')
+            DATE(h.created_at) >= DATE_FORMAT(NOW(), '%Y-%m-01')
         GROUP BY h.house_type WITH ROLLUP;
         `,
         (err, rows, fields) => {
@@ -53,7 +53,7 @@ app.get('/api/sharekim/bed_cnt_group',(req, res)=>{
                 INNER JOIN
             sharehouse.houses AS h ON h.id = r.house_id
         WHERE
-            DATE(h.created_at) >= DATE_FORMAT(NOW(), '%%Y-%%m-01')
+            DATE(h.created_at) >= DATE_FORMAT(NOW(), '%Y-%m-01')
         GROUP BY r.bed_cnt;
         `,
         (err, rows, fields) => {
@@ -76,7 +76,7 @@ app.get('/api/sharekim/deposit_interval',(req, res)=>{
         ON h.id = r.house_id
         INNER JOIN sharehouse.beds as b
         ON r.id = b.room_id
-        WHERE DATE(h.created_at) >= DATE_FORMAT(NOW(), '%%Y-%%m-01')
+        WHERE DATE(h.created_at) >= DATE_FORMAT(NOW(), '%Y-%m-01')
         `,
         (err, rows, fields) => {
             res.send(rows);
@@ -98,7 +98,7 @@ app.get('/api/sharekim/monthly_rent_interval',(req, res)=>{
         ON h.id = r.house_id
         INNER JOIN sharehouse.beds as b
         ON r.id = b.room_id
-        WHERE DATE(h.created_at) >= DATE_FORMAT(NOW(), '%%Y-%%m-01');
+        WHERE DATE(h.created_at) >= DATE_FORMAT(NOW(), '%Y-%m-01');
         `,
         (err, rows, fields) => {
             res.send(rows);
@@ -116,7 +116,7 @@ app.get('/api/sharekim/summary',(req, res)=>{
         ON h.id = r.house_id
         INNER JOIN sharehouse.beds as b
         ON r.id = b.room_id
-        WHERE DATE(h.created_at) >= DATE_FORMAT(NOW(), '%%Y-%%m-01');
+        WHERE DATE(h.created_at) >= DATE_FORMAT(NOW(), '%Y-%m-01');
         `,
         (err, rows, fields) => {
             res.send(rows);
@@ -139,7 +139,7 @@ app.get('/api/sharekim/summary_by_district',(req, res)=>{
         ON h.id = r.house_id
         INNER JOIN sharehouse.beds as b
         ON r.id = b.room_id
-        WHERE DATE(h.created_at) >= DATE_FORMAT(NOW(), '%%Y-%%m-01')
+        WHERE DATE(h.created_at) >= DATE_FORMAT(NOW(), '%Y-%m-01')
         GROUP BY h.district;
         `,
         (err, rows, fields) => {
@@ -158,7 +158,7 @@ app.get('/api/sharekim/filled_bedcnt_by_district',(req, res)=>{
         ON h.id = r.house_id
         INNER JOIN sharehouse.beds as b
         ON r.id = b.room_id
-        WHERE DATE(h.created_at) >= DATE_FORMAT(NOW(), '%%Y-%%m-01')
+        WHERE DATE(h.created_at) >= DATE_FORMAT(NOW(), '%Y-%m-01')
         GROUP BY h.district
         WITH ROLLUP;
         `,
@@ -178,7 +178,7 @@ app.get('/api/sharekim/house_by_district',(req, res)=>{
         ON h.id = r.house_id
         INNER JOIN sharehouse.beds as b
         ON r.id = b.room_id
-        WHERE DATE(h.created_at) >= DATE_FORMAT(NOW(), '%%Y-%%m-01')
+        WHERE DATE(h.created_at) >= DATE_FORMAT(NOW(), '%Y-%m-01')
         GROUP BY h.district
         WITH ROLLUP;
         `,
@@ -198,7 +198,7 @@ app.get('/api/sharekim/total_bed_table',(req, res)=>{
         ON h.id = r.house_id
         INNER JOIN sharehouse.beds as b
         ON r.id = b.room_id
-        WHERE DATE(h.created_at) >= DATE_FORMAT(NOW(), '%%Y-%%m-01')
+        WHERE DATE(h.created_at) >= DATE_FORMAT(NOW(), '%Y-%m-01')
         order by h.road_address;
         `,
         (err, rows, fields) => {
@@ -221,7 +221,7 @@ app.get('/api/sharekim/deposit_interval_by_roomfor',(req, res)=>{
         ON h.id = r.house_id
         INNER JOIN sharehouse.beds as b
         ON r.id = b.room_id
-        where DATE(h.created_at) >= DATE_FORMAT(NOW(), '%%Y-%%m-01')
+        where DATE(h.created_at) >= DATE_FORMAT(NOW(), '%Y-%m-01')
         GROUP BY r.bed_cnt
         WITH ROLLUP;
         `,
@@ -246,7 +246,7 @@ app.get('/api/sharekim/monthly_rent_interval_by_roomfor',(req, res)=>{
         ON h.id = r.house_id
         INNER JOIN sharehouse.beds as b
         ON r.id = b.room_id
-        where DATE(h.created_at) >= DATE_FORMAT(NOW(), '%%Y-%%m-01')
+        where DATE(h.created_at) >= DATE_FORMAT(NOW(), '%Y-%m-01')
         GROUP BY r.bed_cnt
         WITH ROLLUP;
         `,
