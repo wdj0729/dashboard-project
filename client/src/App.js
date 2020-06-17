@@ -1,9 +1,6 @@
 import React, { Component} from 'react';
 import './App.css';
 
-//API 설정
-const API = 'http://localhost:5000/api/seoul/summary'
-
 //Class 구조
 class App extends Component {
   /* 컴포넌트 생성시 */
@@ -18,7 +15,7 @@ class App extends Component {
       // 외부 라이브러리 연동: D3, masonry, etc
       // 컴포넌트에서 필요한 데이터 요청: Ajax, GraphQL, etc
       // DOM 에 관련된 작업: 스크롤 설정, 크기 읽어오기 등
-      fetch(API)
+      fetch('http://localhost:5000/api/sharekim/summary')
       .then(res => res.json())
       .then(json =>{
           //json 데이터 저장
@@ -46,7 +43,7 @@ class App extends Component {
           <img className="App-logo" src="logo.png" alt="" title="쉐어하우스 로고"></img>
           <br></br><br></br>
           <h3 className="App-title">쉐어하우스(Sharehouse)<br></br>실시간 현황판</h3>
-          <h6 className="App-date">마지막 업데이트: 2020.6.14</h6>
+          <h6 className="App-date">마지막 업데이트: 2020.6.18</h6>
         </header>
         <div className="App-contatiner">
           <br></br><br></br>

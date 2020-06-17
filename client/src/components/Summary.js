@@ -12,7 +12,7 @@ import TableRow from '@material-ui/core/TableRow';
 import SummaryData from './Summary.json'
 
 //API 설정
-const API = 'http://localhost:5000/api/seoul/summary'
+const API = 'http://localhost:5000/api/sharekim/summary'
 
 //console.log(SummaryData);
 
@@ -96,7 +96,7 @@ export default function StickyHeadTable(props) {
     fetch(API)
     .then(res => res.json())
     .then(json =>{
-          console.log(json);
+          //console.log(json);
       })
   })
 

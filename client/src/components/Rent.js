@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import tui from 'tui-chart';
 
 //API 설정
-const API = 'http://localhost:5000/api/seoul/monthly_rent_interval'
+const API = 'http://localhost:5000/api/sharekim/monthly_rent_interval'
 
 class Rents extends Component {
     /* 컴포넌트 생성시 */
@@ -18,7 +18,7 @@ class Rents extends Component {
             const donuts = json;
             //console.log(donuts)
             //각 인덱스별 객체에 저장
-            let one = donuts[0]['10~20'];
+            let one = donuts[0]['0~20'];
             let two = donuts[0]['20~30'];
             let three = donuts[0]['30~40'];
             let four = donuts[0]['40~50'];
@@ -59,9 +59,9 @@ class Rents extends Component {
                                 data: two
                             },
                             {
-                                name: '10~20',
+                                name: '0~20',
                                 data: one
-                            },
+                            }
                         ]
                     };
             const options = {

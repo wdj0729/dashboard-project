@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import tui from 'tui-chart';
 
 //API 설정
-const API = 'http://localhost:5000/api/seoul/house_by_district'
+const API = 'http://localhost:5000/api/sharekim/house_by_district'
 
 class Houses extends Component {
     /* 컴포넌트 생성시 */
@@ -47,7 +47,7 @@ class Houses extends Component {
                         categories: ['마포구', '강남구', '서대문구', '관악구', '광진구', 
                                     '동대문구', '서초구', '용산구', '동작구', '성북구',
                                     '중구', '종로구', '영등포구', '성동구', '구로구', 
-                                    '은평구', '노원구', '송파구', '강북구', '강동구', 
+                                    '은평구', '노원구', '송파구', '강동구', '강북구', 
                                     '강서구', '중랑구', '도봉구', '양천구', '금천구',],
                         series: [
                             {
@@ -55,7 +55,7 @@ class Houses extends Component {
                                 data: [mapo, gangnam, seodaemoon, gwanak, gwangjin,
                                     dongdaemoon, seocho, yongsan, dongjak, seongbook,
                                     jungu, jongro, yeongdungpo, seongdong, guro,
-                                    eunpyeong, nowon, songpa, gangbook, gangdong,
+                                    eunpyeong, nowon, songpa, gangdong, gangbook,
                                     gangseo, jungrang, dobong, yangcheon, gumchun,
                                     ]
                             }

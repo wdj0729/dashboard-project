@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import tui from 'tui-chart';
 
 //API 설정
-const API = 'http://localhost:5000/api/seoul/bed_cnt_group'
+const API = 'http://localhost:5000/api/sharekim/bed_cnt_group'
 
 class BedCnts extends Component {
     /* 컴포넌트 생성시 */
@@ -42,12 +42,12 @@ class BedCnts extends Component {
                         categories: ['bed-cnt'],
                         series: [
                             {
-                                name: '1인실',
-                                data: one
-                            },
-                            {
                                 name: '2인실',
                                 data: two
+                            },
+                            {
+                                name: '1인실',
+                                data: one
                             },
                             {
                                 name: '3인실',

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import tui from 'tui-chart';
 
 //API 설정
-const API = 'http://localhost:5000/api/sharekim/deposit_interval'
+const API = 'http://localhost:5000/api/sharekim/deposit_interval_by_roomfor'
 
-class Deposits extends Component {
+class Deposits4 extends Component {
     /* 컴포넌트 생성시 */
     /* 생명주기순서 : constructor(생성자) -> componentWillMount -> render */
     /*constructor(props) {
@@ -18,11 +18,11 @@ class Deposits extends Component {
             const donuts = json;
             //console.log(donuts);
             //각 인덱스별 객체에 저장
-            let one= donuts[0]['0~50'];
-            let two= donuts[0]['50~100'];
-            let three= donuts[0]['100~200'];
-            let four= donuts[0]['200~300'];
-            let five= donuts[0]['300~'];
+            let one= donuts[3]['0~50'];
+            let two= donuts[3]['50~100'];
+            let three= donuts[3]['100~200'];
+            let four= donuts[3]['200~300'];
+            let five= donuts[3]['300~'];
   
             // 전체 개수
             const total_num = one + two + three + four + five;
@@ -39,9 +39,9 @@ class Deposits extends Component {
             five = (five*100)/total_num;
             five = five.toFixed(1)
 
-            const container = document.getElementById('deposit');
+            const container = document.getElementById('deposit4');
             let data = {
-                        categories: ['deposit'],
+                        categories: ['deposit4'],
                         series: [
                             {
                                 name: '50~100',
@@ -70,7 +70,7 @@ class Deposits extends Component {
                             width: 700,
                             height: 700,
                             title: {
-                                text: '서울특별시 보증금 비율',
+                                text: '서울특별시 4인실 보증금 비율',
                                 align: 'center'
                             },
                             format: function(value, chartType, areaType, valuetype, legendName) {
@@ -119,8 +119,8 @@ class Deposits extends Component {
     };
     render() {
         return (
-            <div id="deposit"></div>
+            <div id="deposit4"></div>
         )
     }
 }
-export default Deposits;
+export default Deposits4;

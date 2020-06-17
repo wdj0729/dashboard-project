@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import tui from 'tui-chart';
 
 //API 설정
-const API = 'http://localhost:5000/api/sharekim/deposit_interval'
+const API = 'http://localhost:5000/api/sharekim/summary_by_district'
 
-class Deposits extends Component {
+class Genders extends Component {
     /* 컴포넌트 생성시 */
     /* 생명주기순서 : constructor(생성자) -> componentWillMount -> render */
     /*constructor(props) {
@@ -18,50 +18,32 @@ class Deposits extends Component {
             const donuts = json;
             //console.log(donuts);
             //각 인덱스별 객체에 저장
-            let one= donuts[0]['0~50'];
-            let two= donuts[0]['50~100'];
-            let three= donuts[0]['100~200'];
-            let four= donuts[0]['200~300'];
-            let five= donuts[0]['300~'];
+            let one=0, two=0, total_num=0;
+            for (var i=0; i<25; i++){
+                one= one + donuts[i]['M'];
+                two= two + donuts[i]['F'];
+            }
   
             // 전체 개수
-            const total_num = one + two + three + four + five;
-            //console.log('total_num: ' + total_num)
+            total_num = one + two;
+            //console.log(one, two, total_num);
             // 각 보증금별 분포율
             one = (one*100)/total_num;
             one = one.toFixed(1);
             two =  (two*100)/total_num;
             two =  two.toFixed(1);
-            three =  (three*100)/total_num;
-            three =  three.toFixed(1);
-            four = (four*100)/total_num;
-            four = four.toFixed(1)
-            five = (five*100)/total_num;
-            five = five.toFixed(1)
 
-            const container = document.getElementById('deposit');
+            const container = document.getElementById('gender');
             let data = {
-                        categories: ['deposit'],
+                        categories: ['gender'],
                         series: [
                             {
-                                name: '50~100',
+                                name: '여성',
                                 data: two
                             },
                             {
-                                name: '0~50',
+                                name: '남성',
                                 data: one
-                            },
-                            {
-                                name: '100~200',
-                                data: three
-                            },
-                            {
-                                name: '200~300',
-                                data: four
-                            },
-                            {
-                                name: '300~',
-                                data: five
                             },
                         ]
                     };
@@ -70,7 +52,7 @@ class Deposits extends Component {
                             width: 700,
                             height: 700,
                             title: {
-                                text: '서울특별시 보증금 비율',
+                                text: '서울특별시 거주예상 인원 성비율',
                                 align: 'center'
                             },
                             format: function(value, chartType, areaType, valuetype, legendName) {
@@ -119,8 +101,8 @@ class Deposits extends Component {
     };
     render() {
         return (
-            <div id="deposit"></div>
+            <div id="gender"></div>
         )
     }
 }
-export default Deposits;
+export default Genders;

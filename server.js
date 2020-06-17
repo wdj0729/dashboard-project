@@ -22,7 +22,7 @@ const connection = mysql.createConnection({
 });
 connection.connect();
 
-//서울시 매물 유형 분포
+//서울시 매물 유형 분포 ok
 app.get('/api/sharekim/house_type_distribution',(req, res)=>{
     connection.query(
         `
@@ -84,11 +84,11 @@ app.get('/api/sharekim/deposit_interval',(req, res)=>{
     )
 })
 
-//서울시 구간별 월세
+//서울시 구간별 월세 ok
 app.get('/api/sharekim/monthly_rent_interval',(req, res)=>{
     connection.query(
         `
-        SELECT count(if(b.monthly_rent>10 and b.monthly_rent <=20,true,null)) "10~20", 
+        SELECT count(if(b.monthly_rent>=0 and b.monthly_rent <=20,true,null)) "0~20", 
         count(if(b.monthly_rent>20 and b.monthly_rent <=30,true,null)) "20~30",
         count(if(b.monthly_rent>30 and b.monthly_rent <=40,true,null)) "30~40",
         count(if(b.monthly_rent>40 and b.monthly_rent <=50,true,null)) "40~50",
@@ -106,7 +106,7 @@ app.get('/api/sharekim/monthly_rent_interval',(req, res)=>{
     )
 })
 
-//서울시 요약(서울시 전체방갯수, 전체침대갯수, 평균보증금, 평균월세)
+//서울시 요약(서울시 전체방갯수, 전체침대갯수, 평균보증금, 평균월세) ok
 app.get('/api/sharekim/summary',(req, res)=>{
     connection.query(
         `
@@ -124,7 +124,7 @@ app.get('/api/sharekim/summary',(req, res)=>{
     )
 })
 
-//자치구별 요약
+//자치구별 요약 ok
 app.get('/api/sharekim/summary_by_district',(req, res)=>{
     connection.query(
         `
@@ -168,7 +168,7 @@ app.get('/api/sharekim/filled_bedcnt_by_district',(req, res)=>{
     )
 })
 
-//서울시 지역별 매물수
+//서울시 지역별 매물수 ok
 app.get('/api/sharekim/house_by_district',(req, res)=>{
     connection.query(
         `
@@ -188,7 +188,7 @@ app.get('/api/sharekim/house_by_district',(req, res)=>{
     )
 })
 
-//전체 매물 리스트 테이블(매물링크 미구현)
+//전체 매물 리스트 테이블(매물링크 미구현) ok
 app.get('/api/sharekim/total_bed_table',(req, res)=>{
     connection.query(
         `
@@ -207,7 +207,7 @@ app.get('/api/sharekim/total_bed_table',(req, res)=>{
     )
 })
 
-//인실별 보증금 구간
+//인실별 보증금 구간 ok
 app.get('/api/sharekim/deposit_interval_by_roomfor',(req, res)=>{
     connection.query(
         `
@@ -231,12 +231,11 @@ app.get('/api/sharekim/deposit_interval_by_roomfor',(req, res)=>{
     )
 })
 
-//인실별 월세 구간
+//인실별 월세 구간 ok
 app.get('/api/sharekim/monthly_rent_interval_by_roomfor',(req, res)=>{
     connection.query(
         `
-        SELECT r.bed_cnt 인실, count(if(b.monthly_rent>=0 and b.monthly_rent <=10,true,null)) "0~10",
-        count(if(b.monthly_rent>=10 and b.monthly_rent <=20,true,null)) "10~20", 
+        SELECT r.bed_cnt 인실, count(if(b.monthly_rent>=0 and b.monthly_rent <=20,true,null)) "0~20",
         count(if(b.monthly_rent>20 and b.monthly_rent <=30,true,null)) "20~30",
         count(if(b.monthly_rent>30 and b.monthly_rent <=40,true,null)) "30~40",
         count(if(b.monthly_rent>40 and b.monthly_rent <=50,true,null)) "40~50",

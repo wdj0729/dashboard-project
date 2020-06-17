@@ -85,6 +85,17 @@
   border-radius: .25rem;
 }
 
+#gender {
+  padding-top:3%;
+  padding-left: 27%;
+  padding-bottom: 3%;
+}
+
+#gender > div{
+  border: 2px solid #E6E6E6;
+  border-radius: .25rem;
+}
+
 #districtType {
   padding-top:3%;
   padding-left: 27%;
@@ -115,12 +126,92 @@
   border-radius: .25rem;
 }
 
+#deposit1 {
+  padding-top:3%;
+  padding-left: 27%;
+}
+
+#deposit1> div{
+  border: 2px solid #E6E6E6;
+  border-radius: .25rem;
+}
+
+#deposit2 {
+  padding-top:3%;
+  padding-left: 27%;
+}
+
+#deposit2> div{
+  border: 2px solid #E6E6E6;
+  border-radius: .25rem;
+}
+
+#deposit3 {
+  padding-top:3%;
+  padding-left: 27%;
+}
+
+#deposit3> div{
+  border: 2px solid #E6E6E6;
+  border-radius: .25rem;
+}
+
+#deposit4 {
+  padding-top:3%;
+  padding-left: 27%;
+}
+
+#deposit4> div{
+  border: 2px solid #E6E6E6;
+  border-radius: .25rem;
+}
+
 #rent {
   padding-top:3%;
   padding-left: 27%;
 }
 
 #rent> div{
+  border: 2px solid #E6E6E6;
+  border-radius: .25rem;
+}
+
+#rent1 {
+  padding-top:3%;
+  padding-left: 27%;
+}
+
+#rent1> div{
+  border: 2px solid #E6E6E6;
+  border-radius: .25rem;
+}
+
+#rent2 {
+  padding-top:3%;
+  padding-left: 27%;
+}
+
+#rent2> div{
+  border: 2px solid #E6E6E6;
+  border-radius: .25rem;
+}
+
+#rent3 {
+  padding-top:3%;
+  padding-left: 27%;
+}
+
+#rent3> div{
+  border: 2px solid #E6E6E6;
+  border-radius: .25rem;
+}
+
+#rent4 {
+  padding-top:3%;
+  padding-left: 27%;
+}
+
+#rent4> div{
   border: 2px solid #E6E6E6;
   border-radius: .25rem;
 }
@@ -138,7 +229,6 @@
 #bedCnt {
   padding-top:3%;
   padding-left: 27%;
-  padding-bottom: 3%;
 }
 
 #bedCnt> div{

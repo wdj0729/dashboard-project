@@ -12,7 +12,7 @@ import TableRow from '@material-ui/core/TableRow';
 import SummaryData from './Summary2.json'
 
 //API 설정
-const API = 'http://localhost:5000/api/seoul/total_beds_table'
+const API = 'http://localhost:5000/api/sharekim/total_bed_table'
 
 //console.log(SummaryData);
 
@@ -42,7 +42,7 @@ const columns = [
 
 const rows = [];
 
-for (var i=0; i<4828; i++){
+for (var i=0; i<4834; i++){
   if(SummaryData[i]["매물유형"]==="villa"){
     SummaryData[i]["매물유형"]="빌라";
   }

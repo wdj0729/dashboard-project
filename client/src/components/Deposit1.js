@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import tui from 'tui-chart';
 
 //API 설정
-const API = 'http://localhost:5000/api/sharekim/deposit_interval'
+const API = 'http://localhost:5000/api/sharekim/deposit_interval_by_roomfor'
 
-class Deposits extends Component {
+class Deposits1 extends Component {
     /* 컴포넌트 생성시 */
     /* 생명주기순서 : constructor(생성자) -> componentWillMount -> render */
     /*constructor(props) {
@@ -23,6 +23,8 @@ class Deposits extends Component {
             let three= donuts[0]['100~200'];
             let four= donuts[0]['200~300'];
             let five= donuts[0]['300~'];
+
+            //console.log(one,two,three,four,five);
   
             // 전체 개수
             const total_num = one + two + three + four + five;
@@ -39,21 +41,21 @@ class Deposits extends Component {
             five = (five*100)/total_num;
             five = five.toFixed(1)
 
-            const container = document.getElementById('deposit');
+            const container = document.getElementById('deposit1');
             let data = {
-                        categories: ['deposit'],
+                        categories: ['deposit1'],
                         series: [
                             {
                                 name: '50~100',
                                 data: two
                             },
                             {
-                                name: '0~50',
-                                data: one
-                            },
-                            {
                                 name: '100~200',
                                 data: three
+                            },
+                            {
+                                name: '0~50',
+                                data: one
                             },
                             {
                                 name: '200~300',
@@ -70,7 +72,7 @@ class Deposits extends Component {
                             width: 700,
                             height: 700,
                             title: {
-                                text: '서울특별시 보증금 비율',
+                                text: '서울특별시 1인실 보증금 비율',
                                 align: 'center'
                             },
                             format: function(value, chartType, areaType, valuetype, legendName) {
@@ -119,8 +121,8 @@ class Deposits extends Component {
     };
     render() {
         return (
-            <div id="deposit"></div>
+            <div id="deposit1"></div>
         )
     }
 }
-export default Deposits;
+export default Deposits1;

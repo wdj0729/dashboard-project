@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import tui from 'tui-chart';
 
 //API 설정
-const API = 'http://localhost:5000/api/seoul/house_type_distribution'
+const API = 'http://localhost:5000/api/sharekim/house_type_distribution'
 
 class HouseTypes extends Component {
     /* 컴포넌트 생성시 */
@@ -20,14 +20,14 @@ class HouseTypes extends Component {
             //json 데이터 저장
             const pies = json;
             //각 인덱스별 객체에 저장
-            let villa = pies[0]['TOTAL_BED_CNT'];
-            let apt = pies[1]['TOTAL_BED_CNT'];
-            let etc = pies[2]['TOTAL_BED_CNT'];
-            let house = pies[3]['TOTAL_BED_CNT'];
+            let apt = pies[0]['TOTAL_BED_CNT'];
+            let etc = pies[1]['TOTAL_BED_CNT'];
+            let house = pies[2]['TOTAL_BED_CNT'];
+            let office = pies[3]['TOTAL_BED_CNT'];
             let oneroom = pies[4]['TOTAL_BED_CNT'];
-            let office = pies[5]['TOTAL_BED_CNT'];
+            let villa = pies[5]['TOTAL_BED_CNT'];
             // 전체 유형별 개수
-            const total_num = villa + apt + house + oneroom + office + etc;
+            const total_num = pies[6]['TOTAL_BED_CNT'];
             //console.log('total_num: ' + total_num)
             // 각 유형별 점유율
             villa = (villa*100)/total_num;
@@ -52,16 +52,16 @@ class HouseTypes extends Component {
                                 data: villa
                             },
                             {
-                                name: '기타',
-                                data: etc
+                                name: '아파트',
+                                data: apt
                             },
                             {
                                 name: '단독주택',
                                 data: house
                             },
                             {
-                                name: '아파트',
-                                data: apt
+                                name: '기타',
+                                data: etc
                             },
                             {
                                 name: '원룸 + 오피스텔',

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import tui from 'tui-chart';
 
 //API 설정
-const API = 'http://localhost:5000/api/seoul/filled_bedcnt_by_district'
+const API = 'http://localhost:5000/api/sharekim/filled_bedcnt_by_district'
 
 class DistrictTypes extends Component {
     /* 컴포넌트 생성시 */
@@ -79,12 +79,12 @@ class DistrictTypes extends Component {
                                 data: mapo
                             },
                             {
-                                name: '강남구',
-                                data: gangnam
-                            },
-                            {
                                 name: '동대문구',
                                 data: dongdaemoon
+                            },
+                            {
+                                name: '강남구',
+                                data: gangnam
                             },
                             {
                                 name: '관악구',

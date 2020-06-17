@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import tui from 'tui-chart';
 
 //API 설정
-const API = 'http://localhost:5000/api/seoul/filled_bedcnt_by_district'
+const API = 'http://localhost:5000/api/sharekim/filled_bedcnt_by_district'
 
 class Peoples extends Component {
     /* 컴포넌트 생성시 */
@@ -44,7 +44,7 @@ class Peoples extends Component {
 
                 const container = document.getElementById('people');
                 let data = {
-                        categories: ['마포구', '강남구', '동대문구', '관악구', '서대문구', 
+                        categories: ['마포구', '동대문구', '강남구', '관악구', '서대문구', 
                                      '서초구', '용산구', '광진구', '중구', '성북구',
                                     '종로구', '성동구', '영등포구', '동작구', '노원구',
                                     '송파구', '구로구', '은평구', '중랑구', '강북구',
@@ -52,7 +52,7 @@ class Peoples extends Component {
                         series: [
                             {
                                 name: 'people',
-                                data: [mapo, gangnam, dongdaemoon, gwanak, seodaemoon,
+                                data: [mapo, dongdaemoon, gangnam, gwanak, seodaemoon,
                                     seocho, yongsan, gwangjin, jungu, seongbook,
                                     jongro, seongdong, yeongdungpo, dongjak, nowon,
                                     songpa, guro, eunpyeong, jungrang, gangbook,
@@ -66,7 +66,7 @@ class Peoples extends Component {
                             width: 1160,
                             height: 650,
                             title: {
-                                text: '서울특별시 거주예상 인원수 현황',
+                                text: '서울특별시 자치구별 거주예상 인원수 현황',
                                 align: 'center'
                             },
                             format: ','

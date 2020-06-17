@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import tui from 'tui-chart';
 
 //API 설정
-const API = 'http://localhost:5000/api/sharekim/deposit_interval'
+const API = 'http://localhost:5000/api/sharekim/monthly_rent_interval_by_roomfor'
 
-class Deposits extends Component {
+class Rents2 extends Component {
     /* 컴포넌트 생성시 */
     /* 생명주기순서 : constructor(생성자) -> componentWillMount -> render */
     /*constructor(props) {
@@ -16,14 +16,13 @@ class Deposits extends Component {
         .then(json =>{
             //json 데이터 저장
             const donuts = json;
-            //console.log(donuts);
+            //console.log(donuts)
             //각 인덱스별 객체에 저장
-            let one= donuts[0]['0~50'];
-            let two= donuts[0]['50~100'];
-            let three= donuts[0]['100~200'];
-            let four= donuts[0]['200~300'];
-            let five= donuts[0]['300~'];
-  
+            let one = donuts[1]['0~20'];
+            let two = donuts[1]['20~30'];
+            let three = donuts[1]['30~40'];
+            let four = donuts[1]['40~50'];
+            let five = donuts[1]['50~'];
             // 전체 개수
             const total_num = one + two + three + four + five;
             //console.log('total_num: ' + total_num)
@@ -37,32 +36,32 @@ class Deposits extends Component {
             four = (four*100)/total_num;
             four = four.toFixed(1)
             five = (five*100)/total_num;
-            five = five.toFixed(1)
+            five = five.toFixed(1);
 
-            const container = document.getElementById('deposit');
+            const container = document.getElementById('rent2');
             let data = {
-                        categories: ['deposit'],
+                        categories: ['rent2'],
                         series: [
                             {
-                                name: '50~100',
-                                data: two
-                            },
-                            {
-                                name: '0~50',
-                                data: one
-                            },
-                            {
-                                name: '100~200',
+                                name: '30~40',
                                 data: three
                             },
                             {
-                                name: '200~300',
+                                name: '40~50',
                                 data: four
                             },
                             {
-                                name: '300~',
+                                name: '20~30',
+                                data: two
+                            },
+                            {
+                                name: '50~',
                                 data: five
                             },
+                            {
+                                name: '0~20',
+                                data: one
+                            }
                         ]
                     };
             const options = {
@@ -70,7 +69,7 @@ class Deposits extends Component {
                             width: 700,
                             height: 700,
                             title: {
-                                text: '서울특별시 보증금 비율',
+                                text: '서울특별시 2인실 월세 비율',
                                 align: 'center'
                             },
                             format: function(value, chartType, areaType, valuetype, legendName) {
@@ -119,8 +118,8 @@ class Deposits extends Component {
     };
     render() {
         return (
-            <div id="deposit"></div>
+            <div id="rent2"></div>
         )
     }
 }
-export default Deposits;
+export default Rents2;
